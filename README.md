@@ -1,31 +1,56 @@
-# Three.js-Model-Viewer
-An application using the Three.js library to allow user to load model files and view them online with multiple viewing options.
+# threejs-model-viewer - Build & Run Guide
 
-<b>Loading Models:</b>
-- Choice of inputs, either load model or load model + textures
-- Models and textures can be dragged and dropped onto the viewer
-- Current formats supported: <b>.obj</b> or obj+mtl(and textures), <b>.dae</b> or dae (+textures), <b>.stl</b>,
-  <b>GLTF (+textures)</b> and <b>FBX (+textures)</b>
-  
-- If loading a model and textures, make sure the model file and texture files are in the same folder on your system
+##  1. Prerequisites
 
-<b>Features:</b>
-- View sample models from dropdown list
-- View model information (name of model, number of vertices and faces)
-- Add ambient light and alter the colour
-- Alter the colour of the directional Ligt
-- View model in wireframe model and model+wireframe mode
-- Apply phong shading mode and increase/decrease the shininess level
-- View model in x-ray
-- Apply glow outline pass to the model and set the edge colour of the glow
-- Set background colour of the renderer
-- Auto-rotate the model and adjust the rotation speed
-- Add transform controls (when selected, press S:scale, T:translate and R:rotate)
-- Scale the model up and down
-- Add view helpers such as bounding box, square/circular grid underneath model and an axis
+*  Node.js v16 or higher: [https://nodejs.org/](https://nodejs.org/)
+*  Basic knowledge of npm / git
 
-<b>Potential Features:</b>
-- Support morph targets
-- ZIP file support
+##  2. Clone the source code
 
-<h2><a href="https://adjam93.github.io/threejs-model-viewer/" target="_blank">View the Project Online</a></h2>
+```bash
+git clone https://github.com/Adjam93/threejs-model-viewer.git
+cd threejs-model-viewer
+```
+
+##  3. Install dependencies
+
+```bash
+npm install
+```
+
+##  4. Build the source
+
+```bash
+npm run build
+```
+
+This will build the code into the `dist` directory.
+
+##  5. Run locally
+
+
+```bash
+npm run start
+```
+
+Open the browser at `http://localhost:3000`
+
+##  6. Check results
+
+If successful, the viewer interface will be shown in the browser. Try loading a `.gltf` or `.glb` model.
+
+##  7. Common errors & fixes
+
+| Error                | Cause                   | Solution                                                         |
+| -------------------- | ----------------------- | ---------------------------------------------------------------- |
+| `npm install` error  | Node.js version too low | Upgrade to version ≥16                                           |
+| `Error: port in use` | Port (3000) is occupied | Change port in `package.json` or kill the process using the port |
+| Model not loading    | Incorrect resource path | Check `.gltf/.glb` link in the code                              |
+
+## Summary
+
+1. `git clone` → Get the source code.
+2. `npm install` → Install dependencies.
+3. `npm run build` → Build into `dist` directory.
+4. `npm run start` → Run in the browser.
+
